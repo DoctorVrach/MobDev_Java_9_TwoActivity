@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:text="@string/this_is_activity_one">
     </TextView>
+
     <Button
         android:id="@+id/btnActTwo"
         android:layout_width="wrap_content"

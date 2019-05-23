@@ -4,11 +4,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.content.Intent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity  implements View.OnClickListener {
-
+    TextView tv;
+    CheckBox chb;
     Button btnActTwo;
     Button btnActThree;
     Button btnActFour;
@@ -30,6 +35,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         //btnActFour4.setOnClickListener(this);
         btnActFour4=(Button) findViewById(R.id.btnActFour);
         btnActFour4.setOnClickListener(this);
+
         Log.d(TAG, "MainActivity: onCreate()");
     }
 
@@ -58,7 +64,40 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
     }
 
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mymenu, menu);
+        return super.onCreateOptionsMenu(menu);
 
+    }
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        // TODO Auto-generated method stub
+
+        return super.onPrepareOptionsMenu(menu);    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()) {
+            case R.id.menu_one:
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.menu_two:
+                Intent intent2 = new Intent(this, ActivityTwo.class);
+                startActivity(intent2);
+                break;
+            case R.id.menu_three:
+                Intent intent3 = new Intent(this, Main3Activity.class);
+                startActivity(intent3);
+                break;
+            case R.id.menu_four:
+                Intent intent4 = new Intent(this, Activity4.class);
+                startActivity(intent4);
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
     @Override
     protected void onStart() {
         super.onStart();
