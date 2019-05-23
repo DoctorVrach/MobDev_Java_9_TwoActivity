@@ -76,6 +76,7 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
                 break;
         }
         return super.onOptionsItemSelected(item);
+
     }
     @Override
     protected void onRestart() {
