@@ -1,15 +1,18 @@
 package com.example.twoactivity;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity  implements View.OnClickListener {
 
     Button btnActTwo;
+    Button btnActThree;
+    Button btnActFour;
+    Button btnActFour4;
     final String TAG = "States";
 
     @Override
@@ -19,7 +22,14 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
 
         btnActTwo = (Button) findViewById(R.id.btnActTwo);
         btnActTwo.setOnClickListener(this);
-
+        btnActThree = (Button) findViewById(R.id.btnActThree);
+        btnActThree.setOnClickListener(this);
+        //btnActFour = (Button) findViewById(R.id.btnActFour);
+        //btnActFour.setOnClickListener(this);
+        //btnActFour4 = (Button) findViewById(R.id.btnActFour4);
+        //btnActFour4.setOnClickListener(this);
+        btnActFour4=(Button) findViewById(R.id.btnActFour);
+        btnActFour4.setOnClickListener(this);
         Log.d(TAG, "MainActivity: onCreate()");
     }
 
@@ -30,10 +40,24 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
                 Intent intent = new Intent(this, ActivityTwo.class);
                 startActivity(intent);
                 break;
+            case R.id.btnActThree:
+                Intent intent1 = new Intent(this, Main3Activity.class);
+                startActivity(intent1);
+                break;
+            case R.id.btnActFour:
+                Intent intent2 = new Intent(this, Activity4.class);
+                startActivity(intent2);
+                break;
+          //  case R.id.btnActFour4:
+           //     Intent intent3 = new Intent(this, Main3Activity.class);
+           //     startActivity(intent3);
+           //     break;
             default:
                 break;
         }
     }
+
+
 
     @Override
     protected void onStart() {
